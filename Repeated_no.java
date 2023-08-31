@@ -1,7 +1,7 @@
 /**
  * Missing_no
  */
-public class Missing_no {
+public class Repeated_no {
     public static int findDuplicate(int[] nums) {
         int i=0;
         int ans=0;
