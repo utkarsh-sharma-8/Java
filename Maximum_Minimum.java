@@ -22,6 +22,7 @@ public class Maximum_Minimum {
     }
     public static void main(String[] args) {
         int nums1[]={5,7,2,4,8};
+
         System.out.println("The minimum value is: "+minimum(nums1));
         System.out.println("The maximum value is :"+maximum(nums1));
     }
