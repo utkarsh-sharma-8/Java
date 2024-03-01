@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-tacks {
+public class Game_of_two_stacks {
     static int twoStacks (int x,int[] a,int[] b){
         return twoStacks(x,a,b,0,0)-1;
     }
