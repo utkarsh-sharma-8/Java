@@ -1,4 +1,5 @@
-public class Count_of_nodes {
+public class SumOfNodes {
+    public static int sum=0;
     static class Node{
         int value;
         Node left;
@@ -27,10 +28,10 @@ public class Count_of_nodes {
         if(root==null){
             return 0;
         }
-        int leftNodes=count(root.left);
-        int rightNodes=count(root.right);
-
-        return leftNodes+rightNodes+1;
+        int leftSum=count(root.left);
+        int rightSum=count(root.right);
+        
+        return leftSum+rightSum+root.value;
     }
     public static void main(String[] args){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
