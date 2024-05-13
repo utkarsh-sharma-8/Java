@@ -1,8 +1,8 @@
 public class Runnable_thread {
     public static void main(String[] args){
-        X runnable =new X();
-        Thread threadX=new Thread(runnable);
-        threadX.start();
+       X runnable=new X();
+       Thread threadX=new Thread(runnable);
+       threadX.start();
     }
 }
 class X implements Runnable{
