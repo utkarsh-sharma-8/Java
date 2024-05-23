@@ -1,29 +1,21 @@
-public class Symmetric {
-    public boolean symmetric(TreeNode.Node root){
-       Queue<TreeNode.Node> queue=new LinkedList()<>;
-       queue.add(root.left);
-       queue.add(root.right);
+public class Diameter {
+    int diameter=0;
+    public int diameterOfTree(TreeNode.Node root) {
+        height(root);
+        return diameter-1;
+    }
+    int height(TreeNode.Node node){
+        if(node==null){
+            return 0;
+        }
 
-       while(!queue.isEmpty()){
-        TreeNode.Node left=queue.poll();
-        TreeNode.Node right=queue.poll();
+        int leftHeight=height(node.left);
+        int rightHeight=height(node.right);
 
-        if(left == null && right==null){
-            continue;
-        }
-        
-        if(left == null || right==null){
-            return false;
-        }
-        if(left.val!=right.val){
-            return false;
-        }
-        queue.add(left.left);
-        queue.add(right.right);
-        queue.add(left.right);
-        queue.add(right.left);
-       }
-       return true;
+        int dia=leftHeight+rightHeight+1;
+        diameter=Math.max(diameter,dia);
+
+        return Math.max(leftHeight,rightHeight)+1;
     }
 }
 class TreeNode {
