@@ -1,19 +1,16 @@
-import java.util.Deque;
-import java.util.LinkedList;
-
 public class Invert_Trees {
     public TreeNode.Node invertTree(TreeNode.Node root){
-        if(root.left==null && root.right==null){
-            return root;
-        }
-        Deque<TreeNode.node> deque=new LinkedList<>();
-        deque.addFirst(root);
+       if(root==null){
+        return null;
+       }
 
-        while(!deque.isEmpty()){
-            
-        }
+       TreeNode.Node left=invertTree(root.left);
+       TreeNode.Node right=invertTree(root.right);
 
-        TreeNode.Node temp=root.left;
+       root.left=right;
+       root.right=left;
+
+       return root;
     }
 }
 class TreeNode {
