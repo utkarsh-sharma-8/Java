@@ -24,9 +24,6 @@ public class Populating_Next_Right {
                     queue.offer(currNode.right);
                 }
             }result.add(currentLevel);
-            for(int i=0;i<=currentLevel.length;i++){
-
-            }
         }
         return result;
 
