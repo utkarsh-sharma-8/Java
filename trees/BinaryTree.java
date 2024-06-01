@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class BinaryTree {
-    private static class Node{
+    class Node{
         int val;
         Node right;
         Node left;
