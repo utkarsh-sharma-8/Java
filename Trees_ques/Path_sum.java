@@ -1,43 +1,14 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
-public class Serialize_deserialize{
-    public List<String> serialize(BinaryTree.Node node) {
-        List<String> list=new ArrayList<>();
-        helper(node,list);
-        return list;
-    }
 
-    void helper(BinaryTree.Node node,List<String> list){
-        if(node==null){
-            list.add("null");
-            return;
+public class Path_sum {
+    public boolean hasPathSum(BinaryTree.Node root, int targetSum) {
+        if(root==null){
+            return false;
         }
-        list.add(String.valueOf(node.val));
-
-        helper(node.left,list);
-        helper(node.right,list);
-    }
-    // Decodes your encoded data to tree.
-    public BinaryTree.Node deserialize(List<String> list) {
-        Collections.reverse(list);
-        BinaryTree.Node node=helper2(list);
-        return node;
-    }
-    BinaryTree.Node helper2(List<String> list){
-        String val=list.remove(list.size()-1);
-
-        if(val.charAt(0)=="n"){
-            return null;
+        if(root.val==targetSum && root.left==null && root.right==null){
+            return true;
         }
-        BinaryTree.Node node=new BinaryTree.Node(Integer.parseInt(val));
-
-        node.left=helper2(list);
-        node.right=helper2(list);
-
-        return node;
-        // BinaryTree.Node node1=new BinaryTree.Node(Integer.parseInt(val));
+        return hasPathSum(root.left, targetSum-root.val) || hasPathSum(root.right, targetSum-root.val);
     }
 }
 class BinaryTree {
