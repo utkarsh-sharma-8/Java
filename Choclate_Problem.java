@@ -1,4 +1,4 @@
-//in thhis problem we have to distribute choclate in such way each student get
+//in this problem we have to distribute choclate in such way each student get
 // one choclate and the difference between the number of chocolates in the packet with maximum chocolates and the packet with minimum chocolates 
 // given to the students is minimum.//
 

@@ -1,12 +1,16 @@
 public class Test2 {
-    public static int test(int nums[]){
-        int pivot=-1;
-        for(int i=1;i<nums.length;i++){
-            if(nums[i]<nums[(i-1)%nums.length] && nums[i]<=nums[(i+1)%nums.length]){
-                pivot=i;
+    public static int test(int m,int n){
+        int fourDivisible=0;
+        int sevenDivisible=0;
+        
+        for(int i=m;i<=n;i++){
+            if(i%4==0){
+                fourDivisible=i;
+            }if(i%7==0){
+                sevenDivisible=i;
             }
+
         }
-        return pivot;
     }
     public static void  main(String[] args){
         int nums[]={6,10,6};
